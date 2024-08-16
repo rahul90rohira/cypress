@@ -9,7 +9,8 @@ class  LoginPage {
     open(endPoint){
         // let base=Cypress.env('URL')
         // cy.visit(Cypress.env('URL')+ENDPOINT_PREFIX+endPoint)
-        cy.visit(ENDPOINT_PREFIX+endPoint)
+        //cy.visit(ENDPOINT_PREFIX+endPoint)
+        cy.visit("?route=account/register");
 
     }
 

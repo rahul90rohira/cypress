@@ -2,6 +2,15 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
 
+  reporter: 'mochawesome',
+  reporterOptions: {
+    charts: true,
+    json:true,
+    configFile: 'reporter-config.json',
+    reportDir: 'cypress/report/mochawesome-report/',
+    overwrite : false
+  },
+
   // projectId: "",
   e2e: {
 
@@ -27,7 +36,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
 
-      // -----BELOW CODE NOT WORKING TO PICK THE environment json file based on environment 
+      // -----BELOW CODE NOT WORKING TO PICK THE environment json file based on environment -----
 /*
       //Load the testing configuration and environment variables from separate JSON files.
       //we put the baseUrl and envionment specific config settings in settings/env.settings.json
